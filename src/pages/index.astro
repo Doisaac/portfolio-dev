@@ -14,19 +14,23 @@ import About from '../components/About.astro';
 import User from '../components/icons/User.astro';
 ---
 
-<Layout 
-  title="Portfolio of Douglas Barrera - Software Developer" description="Hire me to build your next project! I specialize in creating innovative and engaging apps. I'm sure you'll love my work."
+<Layout
+  title="Portfolio of Douglas Barrera - Software Developer"
+  description="Hire me to build your next project! I specialize in creating innovative and engaging apps. I'm sure you'll love my work."
 >
   <main class="px-4">
-    <SectionContainer class="pt-44 pb-32">
-      <img 
+    <SectionContainer class="py-16 md:py-36">
+      <img
         class="rounded-full w-12 h-12 mb-4"
-        src="https://avatars.githubusercontent.com/u/53149834?v=4" alt="Doisaac photo" 
+        src="https://avatars.githubusercontent.com/u/53149834?v=4"
+        alt="Doisaac photo"
       />
 
-      <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex items-center gap-x-4 pb-6 lg:pb-10">
+      <h1
+        class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex items-center gap-x-4 pb-6 lg:pb-10"
+      >
         Hey, I'm Douglas Barrera <a
-					class="flex justify-center items-center hover:scale-105 transition"
+          class="flex justify-center items-center hover:scale-105 transition"
           href="https://www.linkedin.com/in/douglas-barrera-doisaac/"
           rel="noopener noreferrer"
           target="_blank"
@@ -36,63 +40,66 @@ import User from '../components/icons/User.astro';
       </h1>
 
       <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
-        <span>A fourth-Year student of</span> 
+        <span>A fourth-Year student of</span>
         <span class="text-[#c4ffede6]">
           Software Development Engineering,
-        </span> 
-        <span class="text-[#7acdff]">
-          based in Santa Ana, El Salvador.
-        </span> 
+        </span>
+        <span class="text-[#7acdff]"> based in Santa Ana, El Salvador. </span>
         <span class="opacity-75">
           I specialize in creating innovative and engaging apps 💻🖱️.
         </span>
       </h2>
 
       <nav class="flex gap-4 mt-8 flex-wrap">
-        <SocialPill href="https://www.linkedin.com/in/douglas-barrera-doisaac/"> 
+        <SocialPill href="https://www.linkedin.com/in/douglas-barrera-doisaac/">
           <LinkedInIcon class="size-4 md:size-6" />
           LinkedIn
         </SocialPill>
 
-        <SocialPill href="https://github.com/Doisaac"> 
+        <SocialPill href="https://github.com/Doisaac">
           <GitHubIcon class="size-4 md:size-6" />
           GitHub
         </SocialPill>
 
-        <SocialPill href="https://www.linkedin.com/in/douglas-barrera-doisaac/"> 
+        <SocialPill href="https://www.linkedin.com/in/douglas-barrera-doisaac/">
           <LinkedInIcon class="size-4 md:size-6" />
           LinkedIn
         </SocialPill>
-        
-        <SocialPill href="mailto:douglasbarrera95@gmail.com"> 
+
+        <SocialPill href="mailto:douglasbarrera95@gmail.com">
           <MailIcon class="size-4 md:size-6" />
           Contact Me!
         </SocialPill>
       </nav>
     </SectionContainer>
 
-    <SectionContainer id="education">
+    <div class="space-y-24">
+      <SectionContainer
+        id="education"
+        class="md:py-0"
+      >
         <h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
-          <SchoolIcon class="size-8"/>
+          <SchoolIcon class="size-8" />
           Education
         </h2>
-      <Experience	/>
-    </SectionContainer>
+        <Experience />
+      </SectionContainer>
 
-    <SectionContainer id="projects">
-      <h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
-        <ProjectIcon class="size-8"/>
-        Projects
-      </h2>
-    <Projects	/>
-    </SectionContainer>
+      <SectionContainer id="projects">
+        <h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
+          <ProjectIcon class="size-8" />
+          Projects
+        </h2>
+        <Projects />
+      </SectionContainer>
 
-    <SectionContainer id="about">
-      <h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
-        <User class="size-8" />
-        About Me
-      </h2>
-      <About />
-    </SectionContainer>
+      <SectionContainer id="about">
+        <h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
+          <User class="size-8" />
+          About Me
+        </h2>
+        <About />
+      </SectionContainer>
+    </div>
   </main>
 </Layout>
