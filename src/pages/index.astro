@@ -10,6 +10,7 @@ import SectionContainer from '../components/SectionContainer.astro';
 import SchoolIcon from '../components/icons/SchoolIcon.astro';
 import ProjectIcon from '../components/icons/ProjectIcon.astro';
 import Projects from '../components/Projects.astro';
+import About from '../components/About.astro';
 import User from '../components/icons/User.astro';
 ---
 
@@ -86,23 +87,10 @@ import User from '../components/icons/User.astro';
 
     <SectionContainer id="about">
       <h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
-        <User class="size-8"/>
+        <User class="size-8" />
         About Me
       </h2>
-
-      <article class="flex flex-col md:flex-row justify-center items-center gap-8">
-        <div class="text-pretty order-2 md:order-1">
-          <p>
-            My two names are Douglas Isaac, but my username across all platforms is Doisaac, pronounced <span class="text-[#7acdff]">\doisac\</span>. I was only 11 years old when I took my first "Programming Introduction Course". Now, at 21 years old, I'm in my <span class="text-[#7acdff]">fourth year of Software Development Engineering.</span> It has been quite a journey!
-          </p>
-        </div>
-
-        <img 
-          src="/prof-pic.png"
-          alt="Douglas Barrera"
-          class="w-64 h-full rotate-3 p-1 lg-p-2 aspect-square rounded-2xl bg-white/10 ring-1 ring-black/70 object-cover order-1 md:order-2" 
-        />
-      </article>
+      <About />
     </SectionContainer>
   </main>
 </Layout>
