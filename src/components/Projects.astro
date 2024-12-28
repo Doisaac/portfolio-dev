@@ -1,0 +1,50 @@
+---
+import BootstrapIcon from "./icons/BootstrapIcon.astro"
+import HTMLIcon from "./icons/HTMLIcon.astro"
+
+const TAGS = {
+  HTML: {
+    name: 'HTML',
+    class: 'bg-orange-600 text-white',
+    icon: HTMLIcon,
+  },
+  BOOTSTRAP: {
+    name: 'Bootstrap',
+    class: 'bg-purple-600/40 text-white ',
+    icon: BootstrapIcon,
+  },
+}
+
+const PROJECTS = [
+  {
+    title: 'MiniDesign - A Construction and Interior Design Company',
+    description: 'Mini Design specializes in transforming interior spaces into functional and aesthetically pleasing works of art. With a unique combination of creativity, technical skill, and attention to detail. Developed with HTML, CSS, JavaScript and Bootstrap.',
+    link: '#'  ,
+    github: '#',
+    image: '/projects/project1.webp',
+    tags: [TAGS.HTML, TAGS.BOOTSTRAP],
+  }
+]
+---
+
+{
+  PROJECTS.map(({image, title, description, tags}) => (
+    <article>
+      <h3 class="text-2xl font-semibold text-[#7acdff] mb-2">{title}</h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <ul class="flex gap-x-2 flex-row mb-2">
+        {
+          tags.map(tag => (
+            <li>
+              <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                <tag.icon class="w-4 h-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+      <img class="rounded shadow-2xl shadow-white/10" src={image} alt={`Screenshot of the project ${title}`} />
+    </article>
+  ))
+}

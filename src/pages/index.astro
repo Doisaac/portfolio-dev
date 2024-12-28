@@ -8,13 +8,15 @@ import SocialPill from '../components/SocialPill.astro';
 import Experience from '../components/Experience.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import SchoolIcon from '../components/icons/SchoolIcon.astro';
+import ProjectIcon from '../components/icons/ProjectIcon.astro';
+import Projects from '../components/Projects.astro';
 ---
 
 <Layout 
   title="Portfolio of Douglas Barrera - Software Developer" description="Hire me to build your next project! I specialize in creating innovative and engaging apps. I'm sure you'll love my work."
 >
   <main>
-    <SectionContainer class="pt-44 pb-24">
+    <SectionContainer class="pt-44 pb-32">
       <img 
         class="rounded-full w-12 h-12 mb-4"
         src="https://avatars.githubusercontent.com/u/53149834?v=4" alt="Doisaac photo" 
@@ -72,5 +74,13 @@ import SchoolIcon from '../components/icons/SchoolIcon.astro';
         </h2>
       <Experience	/>
     </SectionContainer>
+
+    <SectionContainer id="education">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
+        <ProjectIcon class="size-8"/>
+        Projects
+      </h2>
+    <Projects	/>
+  </SectionContainer>
   </main>
 </Layout>
