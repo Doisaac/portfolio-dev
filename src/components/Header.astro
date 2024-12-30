@@ -1,8 +1,31 @@
-<header class="flex justify-center items-center py-3 w-full md:text-base">
-  <nav class="flex justify-center items-center text-sm font-medium text-gray-200 px-3 [&>a]:px-2 [&>a]:py-2 text-center">
-    <a href="#education">Education</a>
-    <a href="#projects">Projects</a>
-    <a href="#about">About me</a>
-    <a href="mailto:douglasbarrera95@gmail.com">Contact</a>
+<header class="flex justify-center items-center mt-2 w-full md:text-base fixed z-10">
+   <nav 
+      class="flex px-3 text-sm font-medium rounded-full text-gray-200 justify-center items-center [&>a]:px-2 [&>a]:py-2"
+   >
+    <a class="hover:text-blue-500 transition" href="#education">Education</a>
+    <a class="hover:text-blue-500 transition" href="#projects">Projects</a>
+    <a class="hover:text-blue-500 transition" href="#about">About me</a>
+    <a class="hover:text-blue-500 transition" href="mailto:douglasbarrera95@gmail.com">Contact</a>
   </nav>
 </header>
+
+<style>
+  nav {
+    animation: nav-shadown 1s linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 100px;
+  }
+
+  nav {
+    @apply bg-gray-800/90;
+  }
+
+  @keyframes nav-shadown {
+    0% {
+      @apply bg-gray-800/0;
+    }
+    to {
+      @apply shadow-lg ring-1 backdrop-blur ring-white/10;
+    }
+  }
+</style>
