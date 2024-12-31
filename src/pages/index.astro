@@ -1,17 +1,17 @@
 ---
-import Badge from '../components/Badge.astro';
-import Layout from '../layouts/Layout.astro';
-import LinkedInIcon from '../components/icons/LinkedInIcon.astro';
-import GitHubIcon from '../components/icons/GitHubIcon.astro';
-import MailIcon from '../components/icons/MailIcon.astro';
-import SocialPill from '../components/SocialPill.astro';
-import Experience from '../components/Experience.astro';
-import SectionContainer from '../components/SectionContainer.astro';
-import SchoolIcon from '../components/icons/SchoolIcon.astro';
-import ProjectIcon from '../components/icons/ProjectIcon.astro';
-import Projects from '../components/Projects.astro';
-import About from '../components/About.astro';
-import User from '../components/icons/User.astro';
+import Badge from "../components/Badge.astro";
+import Layout from "../layouts/Layout.astro";
+import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
+import GitHubIcon from "../components/icons/GitHubIcon.astro";
+import MailIcon from "../components/icons/MailIcon.astro";
+import SocialPill from "../components/SocialPill.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import SchoolIcon from "../components/icons/SchoolIcon.astro";
+import ProjectIcon from "../components/icons/ProjectIcon.astro";
+import Projects from "../components/Projects.astro";
+import About from "../components/About.astro";
+import User from "../components/icons/User.astro";
 ---
 
 <Layout
@@ -20,16 +20,13 @@ import User from '../components/icons/User.astro';
 >
   <main class="px-4">
     <SectionContainer class="py-16 md:py-36">
-      <img
-        class="rounded-full w-12 h-12 mb-4"
-        src="https://avatars.githubusercontent.com/u/53149834?v=4"
-        alt="Doisaac photo"
-      />
-
-      <h1
-        class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex items-center gap-x-4 pb-6 lg:pb-10"
-      >
-        Hey, I'm Douglas Barrera <a
+      <div class="flex items-center gap-4 mb-4">
+        <img
+          class="rounded-full size-16 shadow-lg"
+          src="https://avatars.githubusercontent.com/u/53149834?v=4"
+          alt="Doisaac photo"
+        />
+        <a
           class="flex justify-center items-center hover:scale-105 transition"
           href="https://www.linkedin.com/in/douglas-barrera-doisaac/"
           rel="noopener noreferrer"
@@ -37,6 +34,12 @@ import User from '../components/icons/User.astro';
         >
           <Badge>Available for work</Badge>
         </a>
+      </div>
+
+      <h1
+        class="text-white text-4xl md:text-5xl lg:text-5xl font-bold flex items-center gap-x-4 pb-6 lg:pb-10 tracking-tighter"
+      >
+        Hey, I'm Douglas Barrera
       </h1>
 
       <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
@@ -51,7 +54,9 @@ import User from '../components/icons/User.astro';
       </h2>
 
       <nav class="flex gap-4 mt-8 flex-wrap">
-        <SocialPill href="https://www.linkedin.com/in/douglas-barrera-doisaac/">
+        <SocialPill
+          href="https://www.linkedin.com/in/douglas-barrera-doisaac/"
+        >
           <LinkedInIcon class="size-4 md:size-6" />
           LinkedIn
         </SocialPill>
@@ -59,11 +64,6 @@ import User from '../components/icons/User.astro';
         <SocialPill href="https://github.com/Doisaac">
           <GitHubIcon class="size-4 md:size-6" />
           GitHub
-        </SocialPill>
-
-        <SocialPill href="https://www.linkedin.com/in/douglas-barrera-doisaac/">
-          <LinkedInIcon class="size-4 md:size-6" />
-          LinkedIn
         </SocialPill>
 
         <SocialPill href="mailto:douglasbarrera95@gmail.com">
