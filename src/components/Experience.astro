@@ -1,26 +1,24 @@
 ---
-import ExperienceItem from "./ExperienceItem.astro"
+import ExperienceItem from "./ExperienceItem.astro";
 
 const EXPERIENCE = [
   {
     title: "Software Development Engineer",
-    company: 'Nacional University of El Salvador',
-    description: "Focused on software development, programming languages, and system design..",
+    company: "University of El Salvador",
+    description:
+      "Focused on software development, programming languages, and system design.",
     date: "2022 - Present",
   },
   {
     title: "IT Technician",
-    company: "ITSI",
-    description: "I took a technical high school degree in IT, where I learned the basics of programming and computer science.",
+    company: "National Institute of Santa Ana",
+    description:
+      "I took a technical high school degree in IT, where I learned the basics of programming and computer science.",
     date: "2018 - 2021",
   },
-]
+];
 ---
-<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">                  
-  {
-    EXPERIENCE.map(experience => (
-      <ExperienceItem {...experience} />
-    ))
-  }
-</ol>
 
+<ol class="relative border-s-2 border-[#ffffff26] ml-3 mt-16">
+  {EXPERIENCE.map((experience) => <ExperienceItem {...experience} />)}
+</ol>
