@@ -2,12 +2,41 @@
    <nav 
       class="flex px-3 text-sm font-medium rounded-full text-gray-200 justify-center items-center [&>a]:px-2 [&>a]:py-2"
    >
-    <a class="hover:text-blue-500 transition" href="#education">Education</a>
-    <a class="hover:text-blue-500 transition" href="#projects">Projects</a>
-    <a class="hover:text-blue-500 transition" href="#about">About me</a>
-    <a class="hover:text-blue-500 transition" href="mailto:douglasbarrera95@gmail.com">Contact</a>
+    <a data-section="education" class="hover:text-blue-500 transition" href="#education">Education</a>
+    <a data-section="projects" class="hover:text-blue-500 transition" href="#projects">Projects</a>
+    <a data-section="about" class="hover:text-blue-500 transition" href="#about">About me</a>
+    <a data-section="contact" class="hover:text-blue-500 transition" href="mailto:douglasbarrera95@gmail.com">Contact</a>
   </nav>
 </header>
+
+<script>
+  const $sections = document.querySelectorAll('.section');
+  const $navbarLinks = document.querySelectorAll('header nav a') as NodeListOf<HTMLAnchorElement>;
+
+  const OBSERVER_CONFIG = {
+    root: null,
+    rootMargin: '-200px 0px 0px 0px',
+    threshold: 0.6,
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          $navbarLinks.forEach(link => {
+            if (link.dataset.section === entry.target.id) {
+              link.classList.add('text-blue-500');
+            } else {
+              link.classList.remove('text-blue-500');
+            }
+          })
+        }
+      });
+  }, OBSERVER_CONFIG);
+
+  $sections.forEach((section) => {
+    observer.observe(section);
+  });
+</script>
 
 <style>
   nav {
