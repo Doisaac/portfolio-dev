@@ -1,97 +1,107 @@
 ---
-import BootstrapIcon from './icons/BootstrapIcon.astro';
-import GitHubIcon from './icons/GitHubIcon.astro';
-import HTMLIcon from './icons/HTMLIcon.astro';
-import PreviewProjectIcon from './icons/PreviewProjectIcon.astro';
-import ReactIcon from './icons/ReactIcon.astro';
-import TailwindIcon from './icons/TailwindIcon.astro';
-import LinkButton from './LinkButton.astro';
+import BootstrapIcon from "./icons/BootstrapIcon.astro";
+import GitHubIcon from "./icons/GitHubIcon.astro";
+import HTMLIcon from "./icons/HTMLIcon.astro";
+import PreviewProjectIcon from "./icons/PreviewProjectIcon.astro";
+import ReactIcon from "./icons/ReactIcon.astro";
+import TailwindIcon from "./icons/TailwindIcon.astro";
+import LinkButton from "./LinkButton.astro";
 
 const TAGS = {
   HTML: {
-    name: 'HTML',
-    class: 'bg-orange-600 text-white',
+    name: "HTML",
+    class: "bg-orange-600 text-white",
     icon: HTMLIcon,
   },
   BOOTSTRAP: {
-    name: 'Bootstrap',
-    class: 'bg-purple-600/40 text-white ',
+    name: "Bootstrap",
+    class: "bg-purple-600/40 text-white ",
     icon: BootstrapIcon,
   },
   REACT: {
-    name: 'React',
-    class: 'bg-blue-600/80 text-white',
+    name: "React",
+    class: "bg-blue-600/80 text-white",
     icon: ReactIcon,
   },
   TAILWIND: {
-    name: 'Tailwind CSS',
-    class: 'bg-[#003159] text-white',
-    icon: TailwindIcon, 
-  }
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: TailwindIcon,
+  },
 };
 
 const PROJECTS = [
   {
-    title: 'MiniDesign - A Construction and Interior Design Company',
+    title: "MiniDesign - A Construction and Interior Design Company",
     description:
-      'Mini Design specializes in transforming interior spaces into functional and aesthetically pleasing works of art. With a unique combination of creativity, technical skill, and attention to detail. Developed with HTML, CSS, JavaScript and Bootstrap.',
-      link: '',
-      github: 'https://github.com/Doisaac/miniDesign-company',
-      image: '/projects/project1.webp',
-      tags: [TAGS.HTML, TAGS.BOOTSTRAP],
-    },
-    {
-      title: 'VPMS - A System for a Veterinary Clinic',
-      description:
-      'VPMS is a system designed to help veterinary clinics manage their patients. It also includes authentication features for admins and staff. Developed using React and Tailwind CSS.',
-      link: 'https://patient-management-system-tau.vercel.app/',
-      github: 'https://github.com/Doisaac/veterinary-patient-management-system',
-      image: '/projects/project2.webp',
-      tags: [TAGS.REACT, TAGS.TAILWIND],
+      "Mini Design specializes in transforming interior spaces into functional and aesthetically pleasing works of art. With a unique combination of creativity, technical skill, and attention to detail. Developed with HTML, CSS, JavaScript and Bootstrap.",
+    link: "",
+    github: "https://github.com/Doisaac/miniDesign-company",
+    image: "/projects/svgl.webp",
+    tags: [TAGS.HTML, TAGS.BOOTSTRAP],
+  },
+  {
+    title: "VPMS - A System for a Veterinary Clinic",
+    description:
+      "VPMS is a system designed to help veterinary clinics manage their patients. It also includes authentication features for admins and staff. Developed using React and Tailwind CSS.",
+    link: "https://patient-management-system-tau.vercel.app/",
+    github: "https://github.com/Doisaac/veterinary-patient-management-system",
+    image: "/projects/project2.webp",
+    tags: [TAGS.REACT, TAGS.TAILWIND],
   },
 ];
 ---
 
 <section class="flex flex-col gap-y-16">
-{
-  PROJECTS.map(({ image, title, description, tags, github, link }) => (
-    <article >
-      <h3 class="text-2xl font-semibold text-[#7acdff] mb-2">{title}</h3>
-      <p class="text-lg mb-4 text-pretty">{description}</p>
-      <ul class="flex gap-x-2 flex-row mb-2">
-        {tags.map((tag) => (
-          <li>
-            <span
-              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
-            >
-              <tag.icon class="w-4 h-4" />
-              {tag.name}
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        class="rounded shadow-2xl shadow-white/10"
-        src={image}
-        alt={`Screenshot of the project ${title}`}
-      />
+  {
+    PROJECTS.map(({ image, title, description, tags, github, link }) => (
+      <article class="flex flex-col group space-y-8 space-x-0 md:space-y-0 md:space-x-8 md:flex-row items-center">
+        <div class="md:w-1/2">
+          <div class="rounded-xl shadow-xl transition duration-500 ease-in-out transform md:group-hover:-translate-y-1 overflow-clip md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              src={image}
+              alt={title}
+              class="object-cover object-center w-full transition duration-500 md:scale-110 md:group-hover:scale-105"
+            />
+          </div>
+        </div>
 
-      <footer class="flex gap-x-4 mt-4 justify-end">
-        {github && (
-          <LinkButton href={github}>
-            <GitHubIcon class="size-6" />
-            View source code
-          </LinkButton>
-        )}
+        <div class="md:w-1/2 flex flex-col">
+          <h3 class="text-2xl font-semibold text-[#7acdff]">{title}</h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex gap-x-2 flex-row mb-4">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
+                  >
+                    <tag.icon class="w-4 h-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
 
-        {link && (
-          <LinkButton href={link}>
-            <PreviewProjectIcon class="size-6" />
-            View project
-          </LinkButton>
-        )}
-      </footer>
-    </article>
-  ))
-}
+            <p class="text-gray-400 text-pretty">{description}</p>
+
+            <footer class="flex gap-x-4 mt-4 justify-end">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHubIcon class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+
+              {link && (
+                <LinkButton href={link}>
+                  <PreviewProjectIcon class="size-6" />
+                  View project
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
+    ))
+  }
 </section>
